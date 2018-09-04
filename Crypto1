@@ -1,4 +1,6 @@
 /**
+* @author Andrés Guillermo Bonilla Olarte
+/*
 import java.io.*;
 public class Crypto
 {
