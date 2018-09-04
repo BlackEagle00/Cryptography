@@ -2,7 +2,7 @@
 * @author Andrés Guillermo Bonilla Olarte
 /*
 import java.io.*;
-public class Crypto
+public class Crypto1
 {
     public static String convertVocals(String original)
     {
