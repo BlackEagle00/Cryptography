@@ -1,0 +1,65 @@
+/**
+* @author Andrés Guillermo Bonilla Olarte
+/*
+import java.io.*;
+ class Crypto2
+{
+    public static String convertVocals(String original)
+    {
+        String modified = original;
+        modified = modified.replace("a","4");
+        modified = modified.replace("e","3");
+        modified = modified.replace("i","1");
+        modified = modified.replace("o","0");
+        modified = modified.replace("u","9");
+        
+        return modified;
+    }
+    
+    public static String convertConsonants(String real)
+    {
+    	String converted = real;
+    	return converted;
+    }
+    
+    public static void main(String[] args) 
+    {
+        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+        BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));
+        try
+        {
+        	
+        	String Cadena = br.readLine();
+        	String cadena = Cadena.toLowerCase();
+        	String c4d3n4 = convertVocals(cadena);
+        	char encrypt[] = cadena.toCharArray();
+        	char decrypt[] = cadena.toCharArray();
+        	String encriptado[] = c4d3n4.split(" ");
+        
+        	for (int i = 0; i < encrypt.length; i++) 
+        	{
+        		encrypt[i] = (char)(encrypt[i] + (char) 5) ;
+        	}
+        	
+        	String encrypted = String.valueOf(encrypt);
+        	bw.write(encrypted);
+        	bw.newLine();
+        	
+        	for (int i = 0; i < decrypt.length; i++) 
+        	{
+        		decrypt[i] = (char)(decrypt[i] - (char) 5) ;
+        	}
+        	
+        	String decrypted = String.valueOf(decrypt);
+        	bw.write(decrypted);
+        	bw.newLine();
+        	
+    		bw.flush();
+        }
+        catch (Exception ex)
+        {
+        	ex.printStackTrace();
+        }
+        	String text;
+    }
+}
