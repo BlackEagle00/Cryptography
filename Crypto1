@@ -15,13 +15,7 @@ public class Crypto1
         
         return modified;
     }
-    
-    public static String convertConsonants(String real)
-    {
-    	String converted = real;
-    	return converted;
-    }
-    
+
     public static void main(String[] args) 
     {
         BufferedReader br = new BufferedReader (new InputStreamReader (System.in));       //creating the Reading Buffer
@@ -31,17 +25,33 @@ public class Crypto1
         	
         	String Cadena = br.readLine();  //reading the string
         	String cadena = Cadena.toLowerCase();  //converting all the string to lower characters
-        	String c4d3n4 = convertVocals(cadena);  //encrypting the original string into the new string
+        	String c4d3n4 = convertVocals(cadena); //convert all vocals into numbers, as the function
+        	bw.write(c4d3n4 + "\n");
+        	char encrypt[] = c4d3n4.toCharArray();
+      		char decrypt[] = cadena.toCharArray();
         	bw.write("Texto original: " + cadena+ "\n");  //showing the original string
         	String encriptado[] = c4d3n4.split(" ");  //creating the split substring
           
         	bw.write("Texto encriptado:"+"\n"); //showing the new string
-        	for (int i = 0; i < encriptado.length; i++) 
-        	{
-        		bw.write(encriptado[i]+" "+i);
-        		bw.newLine();
-        	}
-    		bw.flush(); //flush the information
+        	
+        	 for (int i = 0; i < encrypt.length; i++)
+       		 {
+       			 encrypt[i] = (char)(encrypt[i] + (char) 5) ;
+           		 bw.write(encrypt[i]);
+       		 }
+        	 bw.newLine();
+       		 
+       		bw.write("Texto desencriptado:"+"\n");
+       		 
+       		 for (int j = 0; j < decrypt.length; j++)
+       		 {
+       			 decrypt[j] = (char)(encrypt[j] - (char) 5) ;
+       			 bw.write(decrypt[j]);
+       		 }
+       		 bw.newLine();
+       		 
+       		 
+       		 bw.flush(); //releases information
         }
         catch (Exception ex)
         {
