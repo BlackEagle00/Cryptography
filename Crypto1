@@ -15,6 +15,17 @@ public class Crypto1
         
         return modified;
     }
+    public static String convertVowels(String real)
+    {
+        String modified = real;
+        modified = modified.replace("4","a"); //replaces "a" to "4"
+        modified = modified.replace("3","e"); //replaces "e" to "3"
+        modified = modified.replace("1","i"); //replaces "i" to "1"
+        modified = modified.replace("0","o"); //replaces "o" to "0"
+        modified = modified.replace("9","u"); //replaces "u" to "9"
+        
+        return modified;
+    }
 
     public static void main(String[] args) 
     {
@@ -36,22 +47,26 @@ public class Crypto1
         	
         	 for (int i = 0; i < encrypt.length; i++)
        		 {
-       			 encrypt[i] = (char)(encrypt[i] + (char) 5) ;
-           		 bw.write(encrypt[i]);
+       			 encrypt[i] = (char)(encrypt[i] + (char) 1) ;
+       			 
        		 }
+        	 String encrypted = String.valueOf(encrypt);
+       		 bw.write(encrypted);
         	 bw.newLine();
        		 
        		bw.write("Texto desencriptado:"+"\n");
        		 
        		 for (int j = 0; j < decrypt.length; j++)
        		 {
-       			 decrypt[j] = (char)(encrypt[j] - (char) 5) ;
-       			 bw.write(decrypt[j]);
+       			 decrypt[j] = (char)(encrypt[j] - (char) 1) ; 
        		 }
+       		 String decrypted = String.valueOf(decrypt);
+       		 String desencriptado = convertVowels(decrypted);
+  			 bw.write(desencriptado);
        		 bw.newLine();
-       		 
-       		 
+      
        		 bw.flush(); //releases information
+	 
         }
         catch (Exception ex)
         {
