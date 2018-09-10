@@ -48,14 +48,18 @@ public class Crypto
         BufferedReader br = new BufferedReader (new InputStreamReader (System.in));       //creating the Reading Buffer
         BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));     //creating the Writing Buffer
         try
-        {
-        	
+        {     	
         	String Cadena = br.readLine();  //reading the string
         	String cadena = Cadena.toLowerCase();  //converting all the string to lower characters
         	String c4d3n4 = convertVocals(cadena); //convert all vocals into numbers, as the function
 
         	char encrypt[] = c4d3n4.toCharArray();
       		char decrypt[] = cadena.toCharArray();
+      		
+      		bw.write("Código de encriptación: " + "\n");  
+      		int codigo = Integer.parseInt(br.readLine());
+      		bw.write(codigo + "\n");              //showing the encrypt code
+      		char code = (char) codigo;
       		
         	bw.write("Texto original: " + "\n");  //showing the original string
         	bw.write(cadena + "\n");
@@ -69,23 +73,28 @@ public class Crypto
         	
         	 for (int i = 0; i < encrypt.length; i++)
        		 {
-       			 encrypt[i] = (char)(encrypt[i] + (char) 5) ;
+       			 encrypt[i] = (char)(encrypt[i] + (char) code) ;
        		 }
+       			String encrypted = String.valueOf(encrypt);
+       			String[] splitted = encrypted.split(",");     //splitting the array 
+       		 
 
-        	 String encrypted = String.valueOf(encrypt);
-        	 String[] splitted = encrypted.split("\\s+");
-        	 bw.write(splitted);
-        	 bw.newLine();
+        	 for (int a = 0; a < splitted.length; a++) 
+        	 {
+        		 bw.write(splitted[a]+" "+a+"\n");    //output: array + index
+        		 bw.newLine();
+        	 }
+        	
        		 
        		 bw.write("Texto desencriptado:" + "\n");
        		 
        		 for (int j = 0; j < decrypt.length; j++)
        		 {
-       			 decrypt[j] = (char)(encrypt[j] - (char) 5) ; 
+       			 decrypt[j] = (char)(encrypt[j] - (char) code) ; 
        		 }
        		 String decrypted = String.valueOf(decrypt);
        		 String desencriptado = convertVowels(decrypted);
-  			 bw.write(desencriptado);
+  			 bw.write(desencriptado);             //output: decrypted code
        		 bw.newLine();
       
        		 bw.flush(); //releases information
