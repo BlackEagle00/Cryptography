@@ -75,9 +75,9 @@ public class Crypto
        		 {
        			 encrypt[i] = (char)(encrypt[i] + (char) code) ;
        		 }
-       			String encrypted = String.valueOf(encrypt);
-       			String[] splitted = encrypted.split(",");     //splitting the array 
-       		 
+       			String encrypted = String.valueOf(encrypt); 
+       		 	String delimitadores= ",.";
+       		    	String splitted []= encrypted.split(delimitadores);     //splitting the array 
 
         	 for (int a = 0; a < splitted.length; a++) 
         	 {
