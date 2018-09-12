@@ -1,7 +1,7 @@
 import java.io.*;
 /**
  * 
- * @author Andrés Guillermo Bonilla Olarte
+ * @author AndrÃ©s Guillermo Bonilla Olarte
  *
  */
 public class Crypto
@@ -56,16 +56,16 @@ public class Crypto
         	char encrypt[] = c4d3n4.toCharArray();
       		char decrypt[] = cadena.toCharArray();
       		
-      		bw.write("Código de encriptación: " + "\n");  
+      		bw.write("CÃ³digo de encriptaciÃ³n: " + "\n");  
       		int codigo = Integer.parseInt(br.readLine());
       		bw.write(codigo + "\n");              //showing the encrypt code
       		char code = (char) codigo;
       		
-        	bw.write("Texto original: " + "\n");  //showing the original string
-        	bw.write(cadena + "\n");
+        	bw.write("Texto original: " + "\n");  
+        	bw.write(cadena + "\n"); //showing the original string
         	
         	bw.write("Texto con vocales convertidas: " + "\n");
-        	bw.write(c4d3n4 + "\n");
+        	bw.write(c4d3n4 + "\n"); //showing the original string with replaced vowels
         	
         	  //creating the split substring
           
