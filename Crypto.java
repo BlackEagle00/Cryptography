@@ -77,9 +77,13 @@ public class Crypto
         BufferedWriter bw = new BufferedWriter (new OutputStreamWriter (System.out));     //creating the Writing Buffer
         try
         {     	
+        	bw.write("Type your message \n");
+            bw.flush(); //releases information
         	String Cadena = br.readLine();  //reading the string
         	String cadena = Cadena.toLowerCase();  //converting all the string to lower characters
         	String c4d3n4 = convertVocals(cadena); //convert all vocals into numbers, as the function
+            bw.write("Type the function code \n");
+            bw.flush(); //releases information
 
         	char encrypt[] = c4d3n4.toCharArray();
       		char decrypt[] = cadena.toCharArray();
