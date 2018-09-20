@@ -84,24 +84,24 @@ public class Crypto
         	char encrypt[] = c4d3n4.toCharArray();
       		char decrypt[] = cadena.toCharArray();
       		
-      		bw.write("Código de encriptación: " + "\n");  
+      		bw.write("Encrypt code: " + "\n");  
       		int codigo = Integer.parseInt(br.readLine());
       		bw.write(codigo + "\n");              //showing the encrypt code
       		char code = (char) codigo;
    			bw.newLine();
    			
-        	bw.write("Texto original: " + "\n");  
+        	bw.write("Original message: " + "\n");  
         	bw.write(cadena + "\n"); //showing the original string
    			bw.newLine();
    			
-        	bw.write("Texto con vocales convertidas: " + "\n");
+        	bw.write("Message with new vowels: " + "\n");
         	bw.write(c4d3n4 + "\n"); //showing the original string with replaced vowels
         	String splitted []= c4d3n4.split(" ");     //splitting the array 
    			bw.newLine();
    			
         	  //creating the split substring
           
-        	bw.write("Texto encriptado:"+"\n"); //showing the new string
+        	bw.write("Encrypted message:"+"\n"); //showing the new string
         	
         	 for (int i = 0; i < encrypt.length; i++)
        		 {
@@ -118,7 +118,7 @@ public class Crypto
         		 bw.newLine();
         	 }
     			bw.newLine();  		 
-       		 bw.write("Texto desencriptado:" + "\n");
+       		 bw.write("Decrypted message:" + "\n");
        		 
        		 for (int j = 0; j < decrypt.length; j++)
        		 {
